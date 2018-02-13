@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import VisibleBookList from '../containers/viewbooks'
-import Addbook from '../containers/addbook'
+import AddBook from '../containers/addbook'
 import Home from '../home/home'
 import './app.css'
 const App = () => (
@@ -17,7 +17,8 @@ const App = () => (
                <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/books' component={VisibleBookList} />
-                  <Route exact path='/addbook' component={Addbook} />
+                  <Route exact path='/addbook' component={AddBook} />
+                 
                </Switch>
             </div>
          </Router>

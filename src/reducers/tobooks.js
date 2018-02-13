@@ -1,5 +1,5 @@
 const tobooks = (state = [{
-    id:1,
+    id:0,
     name:"Java",
     author:"KK ",
     publisher:"Amazon",
@@ -12,7 +12,8 @@ const tobooks = (state = [{
           ...state,
           action.newbook
         ]
-
+      case 'DELETE_BOOK':
+      return state.filter(book => book.id !== action.id);
 
       default:
         return state

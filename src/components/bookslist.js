@@ -4,7 +4,7 @@ import './book.css'
 import {  Link } from 'react-router-dom';
 
 
-const BookList = ({ books }) => (
+const BookList = ({ books,  onDeleteBookClick}) => (
     <table id="books">
     <tbody>
   <tr>
@@ -20,11 +20,12 @@ const BookList = ({ books }) => (
         <td>{book.author}</td>
         <td>{book.publisher}</td>
         <td>{book.price }</td>     
-       
+        <td> <a class="btn btn-xs btn-danger" onClick={() => onDeleteBookClick(book.id)} > Delete </a> </td>
        </tr>
        )}
  </tbody>
- <a><Link to={'/addbook'} > Add Book</Link></a>
+ 
+ <a class="btn btn-xs btn-sucess"><Link to={'/addbook'} > Add Book</Link></a>
   </table>  
    
 )
@@ -36,8 +37,8 @@ BookList.propTypes = {
     author: PropTypes.string.isRequired,
     publisher: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
-  }).isRequired).isRequired
-  //onTodoClick: PropTypes.func.isRequired
+  }).isRequired).isRequired,
+   onDeleteBookClick: PropTypes.func.isRequired
 }
 
 export default BookList
